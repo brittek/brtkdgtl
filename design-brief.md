@@ -1,15 +1,29 @@
+# Historical design brief
+
+> **Status:** superseded reference material.
+>
+> This document is retained as design provenance only. It predates the current Brittek Digital identity and engineering doctrine. Where this brief conflicts with the current system, the current Brittek operating and brand standards take precedence.
+>
+> In particular, the former dark-first direction, Articulat CF typography, “Awwwards-tier” framing, AI-forward positioning, bounce motion and legacy architecture assumptions are not current defaults.
+
+---
 
 # Brittek Digital: Creative Brief & Technical Spec
 
 ## 1. Creative Brief
+
 **Concept:** "Neo-Luxury Engineering"
+
 **Audience:** Ambitious startups, high-growth SMEs, and enterprise-tier firms looking for technical precision combined with high-end aesthetic value.
-**Differentiators:**
+
+**Historical differentiators:**
+
 - Systems-First Approach: Every design decision is backed by modular engineering logic.
 - Sydney Energy: Reflecting the high-speed, sophisticated, and global nature of the Sydney tech hub.
 - Absolute Performance: Awwwards-tier motion without compromising Lighthouse scores.
 
-## 2. Design System Tokens (JSON)
+## 2. Design System Tokens — Historical
+
 ```json
 {
   "colors": {
@@ -50,7 +64,8 @@
 }
 ```
 
-## 3. Motion Spec (YAML)
+## 3. Motion Spec — Historical
+
 ```yaml
 easing:
   primary: "power4.out"
@@ -73,17 +88,19 @@ interactions:
     cards: 0.05
 ```
 
-## 4. Site Map
-- / (Home): The signature sequence
-- /services: Technical & Creative deep-dive
-- /work: Featured Case Studies
-- /work/:slug: Detailed Project Breakdown
-- /insights: Engineering & Automation thought leadership
-- /about: Ethos & Capabilities
-- /contact: Inquiries & Privacy-first lead gen
-- /legal: Privacy & Terms
+## 4. Site Map — Historical
 
-## 5. Prisma Schema
+- `/` — Home
+- `/services` — Technical & creative deep-dive
+- `/work` — Featured case studies
+- `/work/:slug` — Project detail
+- `/insights` — Engineering & automation material
+- `/about` — Ethos & capabilities
+- `/contact` — Enquiries
+- `/legal` — Privacy & terms
+
+## 5. Prisma Schema — Historical concept
+
 ```prisma
 datasource db {
   provider = "postgresql"
@@ -113,3 +130,7 @@ model NewsletterSubscriber {
   createdAt DateTime @default(now())
 }
 ```
+
+---
+
+For current public positioning and production information, use https://brittek.net and the canonical production documentation rather than this historical brief.
