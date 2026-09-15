@@ -1,274 +1,90 @@
-<div align="center">
+# brtkdgtl
 
-# BRITTEK DIGITAL
+Public interface study for [Brittek Digital](https://brittek.net), an independent design-engineering practice in Sydney, Australia.
 
-**Design Systems. AI Infrastructure. High-Performance Web Engineering.**
+This repository is a compact React/Vite surface used to explore Brittek interaction, motion and presentation patterns. It is intentionally smaller than the production Brittek environment and should be read as an interface study rather than a complete representation of the studio's infrastructure.
 
-Building premium digital systems for ambitious businesses through strategy, engineering, and intelligent automation.
+## System
 
-[Website](https://brittek.net) • [Portfolio](https://brittek.net/work) • [Contact](mailto:hello@brittek.net)
-
----
-
-</div>
-
-## Overview
-
-Brittek Digital is a Sydney-based digital design and engineering studio focused on building high-performance websites, scalable design systems, AI-powered workflows, and modern digital products.
-
-Every project is engineered around four principles:
-
-- Performance-first architecture
-- Systems-based design
-- AI-native workflows
-- Long-term maintainability
-
-This repository contains the source code powering the Brittek Digital platform.
-
----
-
-## Core Capabilities
-
-### Web Design & Development
-
-Fast, technically robust websites built using modern frameworks with a strong focus on accessibility, SEO, Core Web Vitals and long-term scalability.
-
-### AI Automation
-
-Practical AI systems that automate repetitive work, improve internal operations and integrate into existing business workflows.
-
-### Brand Systems
-
-Identity systems designed to create consistency across digital products, marketing and customer experiences.
-
----
-
-## Featured Projects
-
-| Project | Industry | Description |
-|----------|-----------|-------------|
-| **Sharpe Carpentry** | Construction | Premium residential carpentry positioned through clean UX and conversion-focused design. |
-| **Incog Systems** | Privacy Technology | Secure GrapheneOS devices with a privacy-first digital identity. |
-| **Neat. Homes** | Property Services | Premium subscription cleaning platform with refined branding and UX. |
-| **Autumn Estate** | Hospitality | Property experience platform focused on clarity, booking simplicity and speed. |
-| **Hydra** | Infrastructure | Brand and digital concept for next-generation energy and data centre infrastructure. |
-| **Applied Interfaces** | Research & Development | Experimental interaction design, motion systems and interface prototypes. |
-| **Régime Sydney** | Fashion | Contemporary luxury streetwear identity and digital ecosystem. |
-
----
-
-## Technology Stack
-
-### Frontend
-
-- Next.js 15
 - React 19
 - TypeScript
-- Tailwind CSS v4
+- Vite 6
 - GSAP
-- Lenis
+- GitHub Pages delivery
+- pnpm for package management
 
-### Backend
+## Principles
 
-- FastAPI
-- Prisma
-- PostgreSQL
-- Supabase
+The implementation follows the same operating constraints used across Brittek work:
 
-### Infrastructure
+- semantic structure before decoration;
+- accessible interaction states;
+- purposeful motion;
+- low dependency overhead;
+- clear information hierarchy;
+- performance as an interface property;
+- maintainable, legible source.
 
-- Cloudflare Pages
-- Cloudflare Workers
-- Cloudflare R2
-- Cloudflare KV
-- Cloudflare D1
+## Local development
 
-### Tooling
+Requirements:
 
+- Node.js 20 or newer
 - pnpm
-- Biome
-- Vitest
-- Playwright
-- Lighthouse CI
-
----
-
-## Repository Structure
-
-```
-app/
-components/
-content/
-hooks/
-lib/
-public/
-styles/
-types/
-prisma/
-```
-
----
-
-## Environment Variables
-
-Create a `.env.local` file.
 
 ```bash
-# Database
-DATABASE_URL="postgresql://..."
-
-# Email
-RESEND_API_KEY="re_..."
-
-# Analytics
-NEXT_PUBLIC_POSTHOG_KEY="phc_..."
-NEXT_PUBLIC_POSTHOG_HOST="https://app.posthog.com"
-
-# Security
-CSP_NONCE_SECRET="..."
-
-# AI
-OPENAI_API_KEY="..."
-ANTHROPIC_API_KEY="..."
-```
-
----
-
-## Local Development
-
-Clone the repository.
-
-```bash
-git clone https://github.com/brittek-digital/brittek.git
-```
-
-Install dependencies.
-
-```bash
+git clone https://github.com/brittek/brtkdgtl.git
+cd brtkdgtl
 pnpm install
-```
-
-Generate Prisma client.
-
-```bash
-pnpm prisma generate
-```
-
-Push the database schema.
-
-```bash
-pnpm prisma db push
-```
-
-Run the development server.
-
-```bash
 pnpm dev
 ```
 
-Open:
+Vite will print the local development URL after startup.
 
-```
-http://localhost:3000
-```
+## Verification
 
----
-
-## Build
-
-Production build
+Run the complete repository check before shipping changes:
 
 ```bash
-pnpm build
+pnpm check
 ```
 
-Preview production build
+The check performs:
 
-```bash
-pnpm start
+```text
+TypeScript verification
+        ↓
+Vite production build
 ```
 
-Lint
-
-```bash
-pnpm lint
-```
-
-Type checking
+Individual commands are also available:
 
 ```bash
 pnpm typecheck
+pnpm build
+pnpm preview
 ```
-
-Run tests
-
-```bash
-pnpm test
-```
-
----
-
-## Design Principles
-
-- Performance over decoration
-- Accessibility by default
-- Motion with purpose
-- Minimal dependencies
-- Strong information hierarchy
-- Semantic HTML
-- Maintainable architecture
-
----
-
-## Performance Targets
-
-| Metric | Target |
-|---------|---------|
-| Lighthouse | 95+ |
-| LCP | <2.0s |
-| CLS | <0.05 |
-| INP | <200ms |
-| WCAG | AA |
-
----
 
 ## Deployment
 
-The project is designed for Cloudflare Pages.
+GitHub Actions builds the Vite application and deploys the generated `dist/` directory to GitHub Pages.
 
-Typical deployment flow:
+The deployment workflow is intentionally limited to reproducible build and delivery concerns. The canonical Brittek production platform, operational services and private infrastructure are maintained separately.
 
-```bash
-pnpm install
-pnpm build
-```
+## Brand boundary
 
-Configure all environment variables within your deployment platform before publishing.
+Brittek Digital treats AI as infrastructure rather than identity. Public-facing work should remain focused on design quality, systems thinking, engineering clarity and durable implementation.
 
----
+Canonical brand references:
 
-## Internal Products
+- paper: `#F4F3EF`
+- ink: `#0D0D0B`
+- signal orange: `#FE4A02`
 
-- Brittek UI Kit
-- Privacy Pro Hub
-- Studio Mockups
-- Hydra
-- Neural OS
-- BKOS (Brittek Knowledge Operating System)
+## Security
 
----
-
-## Philosophy
-
-Great digital products are engineered—not decorated.
-
-Brittek Digital combines systems thinking, modern engineering and thoughtful design to create software, websites and brands that remain fast, maintainable and commercially effective long after launch.
-
----
+Do not publish credentials, private API keys, customer data or deployment secrets in this repository. Security-sensitive reports should be sent privately to [hello@brittek.net](mailto:hello@brittek.net).
 
 ## Licence
 
-Copyright © Brittek Digital.
-
-All rights reserved.
-```
+Copyright © Brittek Digital. All rights reserved unless a file states otherwise.
