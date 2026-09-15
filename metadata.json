@@ -1,11 +1,8 @@
 {
   "name": "Brittek Digital",
   "short_name": "Brittek",
-  "description": "Sydney-based digital studio crafting modern digital systems with clarity and precision through high-end engineering and design.",
-  "theme_color": "#ff5c00",
-  "background_color": "#050505",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
+  "description": "Independent Sydney design-engineering practice building interfaces, infrastructure and machine-readable systems.",
+  "theme_color": "#FE4A02",
+  "background_color": "#F4F3EF",
+  "requestFramePermissions": []
 }
